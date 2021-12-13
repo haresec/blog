@@ -2,10 +2,9 @@
 <html>
 
 <head>
-    
-        <meta charset="utf-8" />
+    <meta charset="utf-8" />
 <title>
-    友链 | 
+    
 </title>
 <!--[if lt IE 9]><script src="//cdn.bootcss.com/html5shiv/r29/html5.js"></script><![endif]-->
 <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
@@ -53,7 +52,6 @@
                                 })();
                             </script>
                             
-            
 </head>
 
 <body>
@@ -205,34 +203,182 @@
                 <div class="container">
                     <article class="post-wrap">
                         <header class="post-header">
-                            <h1 class="post-title zh">
-                                &#x53CB;&#x94FE;
+                            <h1 class="post-title">
+                                Scanner使用
                             </h1>
-                            <h1 class="post-title en">
-                                Friends
-                            </h1>
-                        </header>
-                        <div class="post-content">
                             
-                                
-                                    <div class="friend-box">
-                                        <img class="friend-avatar" src="https://blog.itjoker.cn/images/avatar.png">
-                                        <div class="flink-info">
-                                            <a href="https://blog.itjoker.cn" target="_blank">
-                                                ITJoker
-                                            </a>
-                                            <br />
-                                            ITJoker&#39;s Blog
-                                        </div>
+                                    <!--zh-->
+                                    <div class="post-meta zh">
+                                        &#x4F5C;&#x8005;:
+                                        <a itemprop="author" rel="author" href="/">
+                                            
+                                        </a>
+                                        <span class="post-time">&#x65E5;&#x671F;: <a href="#">2021-12-13</a></span>
+                                        <span class="post-readtime">&#x9605;&#x8BFB;&#x65F6;&#x95F4;:<a
+                                    href="#">2.4
+                                    &#x5206;&#x949F;</a></span>
+                                        <span class="post-words">&#x5B57;&#x6570;:<a href="#">558</a></span>
+                                        
+                                                阅读量:
+                                                <span data-hk-page="current"> - </span>
+                                                
                                     </div>
                                     
-                                        
+                        </header>
+                        
+                        <div class="post-content">
+                            <h1 id="scanner对象">scanner对象</h1>
+<p>Java.util.Scanner是Java5新特征，我们可以通过Scanner类来获取用户的输入。</p>
+<h1 id="基本语法">基本语法：</h1>
+<p>Scanner scanner = new Scanner(System.in);<br>
+通过Scanner类的next()与nextLine()方法获取输入的字符串，在读取前我们一般需要使用hasNext()与hasNextLine()判断是否还有输入的数据。<br>
+next():<br>
+1、一定要读取到有效字符后才可以结束输入<br>
+2、对输入有效字符之前遇到的空白，next()方法会自动将其去掉<br>
+3、只有输入有效字符才将其后面输入的空白作为分隔符或者结束符<br>
+4、next()不能得到带有空格的字符串。</p>
+<p>nextLine()：<br>
+1、以Enter为结束符，也就是说nextLine()方法返回的是输入回车之前的所有字符<br>
+2、可以获得空白。</p>
+<p>package com.study.scanner;</p>
+<p>import java.util.Scanner;</p>
+<p>public class Demo01 {<br>
+public static void main(String[] args) {<br>
+//创建一个扫描器对象，用于接收键盘数据<br>
+Scanner scanner = new Scanner(System.in);<br>
+System.out.println(&quot;使用next方式接收：&quot;);<br>
+//判断用户有没有输入字符串<br>
+if(scanner.hasNext()){<br>
+//使用next方式接收<br>
+String str = scanner.next();<br>
+System.out.println(&quot;输入的内容：&quot;+str);<br>
+}<br>
+//凡是属于IO流的类如果不关闭会一直占用资源，要养成好习惯用完就关掉<br>
+scanner.close();<br>
+}<br>
+}</p>
+<h1 id="接收打印">接收打印</h1>
+<p>package com.study.scanner;</p>
+<p>import java.util.Scanner;</p>
+<p>public class Demo02 {<br>
+public static void main(String[] args) {<br>
+//从键盘接收数据<br>
+Scanner scanner = new Scanner(System.in);<br>
+System.out.println(&quot;请输入数据：&quot;);<br>
+String str = scanner.nextLine();<br>
+System.out.println(&quot;输出内容为：&quot;+str);<br>
+scanner.close();<br>
+}<br>
+}</p>
+<h1 id="scanner进阶使用">Scanner进阶使用</h1>
+<p>package com.study.scanner;</p>
+<p>import java.util.Scanner;</p>
+<p>public class Demo04 {<br>
+public static void main(String[] args) {<br>
+//我们可以输入多个数字，并求其总和平均数，每输入一个数字用回车确认，通过输入非数字来结束输入并输出执行结果：<br>
+Scanner scanner = new Scanner(System.in);<br>
+//和<br>
+double sum = 0;<br>
+//计算输入了多少个数字<br>
+int m = 0;<br>
+System.out.println(&quot;请输入数据：&quot;);<br>
+//通过循环判断是否还有输入，并在里面对每一个进行求和统计<br>
+while(scanner.hasNextDouble()){<br>
+double x = scanner.nextDouble();<br>
+m = m + 1;<br>
+sum = sum + x;<br>
+}<br>
+System.out.println(m + &quot;个数的和为&quot; + sum);<br>
+System.out.println(m + &quot;个数平均值是&quot; + (sum/m));<br>
+scanner.close();<br>
+}<br>
+}</p>
+
                         </div>
+                        
+                            <div class="post-toc">
+                                <ul class="markdownIt-TOC">
+<li><a href="#scanner%E5%AF%B9%E8%B1%A1">scanner对象</a></li>
+<li><a href="#%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95">基本语法：</a></li>
+<li><a href="#%E6%8E%A5%E6%94%B6%E6%89%93%E5%8D%B0">接收打印</a></li>
+<li><a href="#scanner%E8%BF%9B%E9%98%B6%E4%BD%BF%E7%94%A8">Scanner进阶使用</a></li>
+</ul>
+
+                            </div>
+                            
+                                
+                                    
+                                            <!--zh-->
+                                            <section class="post-copyright zh">
+                                                <p class="copyright-item ">
+                                                    <span>&#x4F5C;&#x8005;:</span>
+                                                    <span></span>
+                                                </p>
+
+                                                <p class="copyright-item">
+                                                    <span>&#x6C38;&#x4E45;&#x94FE;&#x63A5;:</span>
+                                                    <span><a href="https://haresec.github.io/blog/post/scanner-shi-yong/">https://haresec.github.io/blog/post/scanner-shi-yong/</a></span>
+                                                </p>
+
+                                                <p class="copyright-item">
+                                                    <span>&#x534F;&#x8BAE;:</span>
+                                                    <span>MIT License</span>
+                                                </p>
+                                            </section>
+                                            
+                                                
+                                                    
+                                                                    <!--Share-->
+                                                                    <span style="margin-right:15px">
+                        <i class="post-share"></i>
+                        <span>&#x5206;&#x4EAB;:</span>
+                                                                    <a title="QR 码" target="_blank" href="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://haresec.github.io/blog/post/scanner-shi-yong/"><i class="fa fa-qrcode"></i></a>
+                                                                    <a title="QQ" target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://haresec.github.io/blog/post/scanner-shi-yong/&sharesource=qzone&title=Scanner使用&pics=https://haresec.github.io/blog/images/avatar.png?v=1639399057641&summary="><i class="fa fa-qq"></i></a>
+                                                                    <a title="新浪微博" target="_blank" href="https://service.weibo.com/share/share.php?url=https://haresec.github.io/blog/post/scanner-shi-yong/&sharesource=weibo&title=Scanner使用 + " - " + &pic="https://haresec.github.io/blog/images/avatar.png?v=1639399057641 "><i class="fa fa-weibo "></i></a>
+
+                                                                    </span>
+                                                                    
+                                                                        <div class="reward ">
+                                                                            <div class="reward-button ">&yen;
+                                                                                <span class="reward-code "> 
+                        <span class="alipay-code "> <img class="alipay-img " alt = "support " src="https://blog.itjoker.cn/alipay.jpg"><b>支付宝</b> </span>
+                                                                                <span class="wechat-code "> <img alt ="support " class="wechat-img " src="https://blog.itjoker.cn/wechat.jpg"><b>微信</b> </span> </span>
+                                                                            </div>
+                                                                        </div>
+                                                                        
+                                                                            <!--zh-->
+                                                                            <section class="post-tags zh ">
+                                                                                <div>
+                                                                                    <span>&#x6807;&#x7B7E;:</span>
+                                                                                    <span class="tag ">
+                        
+                                </span>
+                                                                                </div>
+                                                                                <div>
+                                                                                    <a href="javascript:window.history.back();">
+                        &#x8FD4;&#x56DE;</a>
+                                                                                    <span>&dot;</span>
+                                                                                    <a href="#">&#x4E3B;&#x9875;</a>
+                                                                                </div>
+                                                                            </section>
+
+                                                                            
+                                                                                <!---->
+                                                                                <section class="post-nav">
+                                                                                    
+                                                                                            
+                                                                                                <a class="next" rel="next" href="https://haresec.github.io/blog/post/javase/">
+                                                                                                    JavaSE-基础语法
+                                                                                                </a>
+                                                                                                
+                                                                                </section>
                     </article>
                 </div>
+                
+                                            
             </div>
-            
-                                        
+    </div>
+    </div>
     </div>
     
     <div id="player"></div>
@@ -327,6 +473,10 @@
                     console.log(" Blog Update Time: " + newDate.toLocaleDateString());
                     console.log("\n %c \u26a1Theme:Chic Author's Blog:https://blog.itjoker.cn  Write By ITJoker  \n\n", "color: #ffffff; background: rgba(49, 49, 49, 0.85); padding:5px 0;border-radius:5px;");
                 </script>
+        </div>
 </body>
+<script>
+    scroll();
+</script>
 
 </html>
