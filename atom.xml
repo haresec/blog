@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://haresec.github.io/blog</id>
     <title></title>
-    <updated>2021-12-13T02:54:12.569Z</updated>
+    <updated>2021-12-13T04:20:50.932Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://haresec.github.io/blog"/>
     <link rel="self" href="https://haresec.github.io/blog/atom.xml"/>
@@ -209,6 +209,51 @@ System.out.println(b);<br>
 System.out.println(c);  //java.lang下的包不需要导入；<br>
 double pow = new Math.pow(2,3);<br>
 System.out.println(pow);    }}</p>
+<h1 id="逻辑运算符">逻辑运算符</h1>
+<p>package operator;<br>
+public class Demo03 {<br>
+public static void main(String[] args) {<br>
+//与（and）    或(or)   非（取反）<br>
+boolean a = true;<br>
+boolean b = false;<br>
+System.out.println(&quot;a &amp;&amp; b:&quot;+(a &amp;&amp; b));<br>
+System.out.println(&quot;a | b:&quot;+(a || b));<br>
+System.out.println(&quot;!(a &amp;&amp; b:)&quot;+(!(a &amp;&amp; b)));<br>
+//短路运算<br>
+int c = 5;<br>
+boolean d = (c&lt;4)&amp;&amp;(c++&lt;4);<br>
+System.out.println(d);<br>
+System.out.println(c);<br>
+}<br>
+}</p>
+<h1 id="位运算符">位运算符</h1>
+<p>package operator;</p>
+<h2 id="public-class-demo04-public-static-void-mainstring-args-a-0011-1100b-0000-1101">public class Demo04 {<br>
+public static void main(String[] args) {<br>
+/*<br>
+A = 0011 1100<br>
+b = 0000 1101</h2>
+<pre><code>  A&amp;B = 0000 1100   &quot;&amp;&quot;如果相对应位都是1，则结果为1，否则为0
+  A|B = 0011 1101   &quot;|&quot;如果对应位都是0，则结果为0，否则为1
+  A^B = 0011 0001   “^”如果相同为0，否则为1
+   ~B = 1111 0010   取反
+</code></pre>
+<hr>
+<pre><code>   2*8 = 16
+   &lt;&lt;   *2
+   &gt;&gt;   *2
+   0000 0000    0
+   0000 0001    1
+   0000 0010    2
+   0000 0011    3
+   0000 0100    4
+   0000 1000    8
+   0001 0000    16
+     */
+    System.out.println(2&lt;&lt;3);
+}
+</code></pre>
+<p>}</p>
 <h1 id="java包机制">Java包机制#</h1>
 <p>包可以理解为一个文件夹<br>
 为了更好的组织类，Java提供了包机制，用于区别类名的命名空间。<br>
