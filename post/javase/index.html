@@ -204,7 +204,7 @@
                     <article class="post-wrap">
                         <header class="post-header">
                             <h1 class="post-title">
-                                关于
+                                JavaSE-基础语法
                             </h1>
                             
                                     <!--zh-->
@@ -215,10 +215,16 @@
                                         </a>
                                         <span class="post-time">&#x65E5;&#x671F;: <a href="#">2021-11-17</a></span>
                                         <span class="post-readtime">&#x9605;&#x8BFB;&#x65F6;&#x95F4;:<a
-                                    href="#">0.1
+                                    href="#">6.9
                                     &#x5206;&#x949F;</a></span>
-                                        <span class="post-words">&#x5B57;&#x6570;:<a href="#">20</a></span>
+                                        <span class="post-words">&#x5B57;&#x6570;:<a href="#">1689</a></span>
                                         
+                                            <span class="post-category">&#x5206;&#x7C7B;:
+                                
+                                <a href="https://haresec.github.io/blog/tag/java/">Java</a>
+                                
+                            </span>
+                                            
                                                 阅读量:
                                                 <span data-hk-page="current"> - </span>
                                                 
@@ -227,25 +233,210 @@
                         </header>
                         
                         <div class="post-content">
-                            <blockquote>
-<p>欢迎来到无聊时刻！🤝</p>
-</blockquote>
-<!-- more -->
-<h2 id="本站是记录成长">🏠 本站是记录成长</h2>
-<h2 id="发呆">⛹ 发呆</h2>
-<h2 id="2438116539qqcom">2438116539@qq.com</h2>
+                            <h1 id="注释">注释#</h1>
+<p>单行注释： //注释<br>
+多行注释： /<em>注释</em>/<br>
+文档注释： /** 文档注释 */<br>
+<img src="https://haresec.github.io/blog/post-images/1639362158241.png" alt="" loading="lazy"></p>
+<h1 id="标识符与关键字">标识符与关键字#</h1>
+<p>下图为Java中所有的关键字<br>
+所有标字识符必须以大小写母或$或_开头，首字母之后可以用数字<br>
+不能使用关键字做变量名或方法名<br>
+标识符大小写敏感<br>
+<img src="https://haresec.github.io/blog/post-images/1639362215427.png" alt="" loading="lazy"></p>
+<h1 id="数据类型">数据类型#</h1>
+<p>Java是一种强类型语言：要求变量使用要严格符合规定，所有变量必须先定以后才能使用。<br>
+Java数据类型分为2大类<br>
+基本类型（primitive type）：<br>
+1、整数类型： byte占1个字节<br>
+​ short占2个字节<br>
+​ int 占4个字节 （默认）<br>
+​ long占8个字节<br>
+2、浮点类型：float占4个字节<br>
+​ double占2个字节（默认）<br>
+3、字符类型：char占2个字节<br>
+4、boolean类型：占1位，true和false<br>
+引用类型（reference type）<br>
+1、类 class<br>
+2、接口 interface<br>
+3、数组 array<br>
+public class Demo01 {<br>
+public static void main(String[] args) {<br>
+//八大基本数据类型   定义的变量不赋值则无法使用<br>
+byte num1 =10;<br>
+short num2 = 20;<br>
+int num3 = 30;<br>
+long num4 = 40L; //长整型需要在value后面加L</p>
+<pre><code>    // 浮点数 float double
+    float num5 = 10.1F; //float 类型需要在value后加F
+    double num6 = 3.1415926;
+
+    //字符类型
+    char name1 = 'A';
+    //字符串String不是数据类型也不是关键词而是类，必须用&quot;包裹
+    String name2 = &quot;Hellow World!&quot;;
+
+    boolean flag = true;
+
+    System.out.println(num1);
+    System.out.println(num2);
+    System.out.println(num3);
+    System.out.println(num4);
+    System.out.println(num5);
+    System.out.println(num6);
+    System.out.println(name1);
+    System.out.println(name2);
+    System.out.println(flag);
+
+}
+</code></pre>
+<p>}</p>
+<h1 id="类型转换">类型转换#</h1>
+<p>Java是抢类型语言，在进行运算时，不同类型的数据需要先转换为同一类型在进行运算。<br>
+<img src="https://haresec.github.io/blog/post-images/1639362201900.png" alt="" loading="lazy"></p>
+<p>容量从低到高优先级排序，因为浮点型优先级比整型高，所以float虽然容量小于long，但依然优先级高于long。<br>
+从 高 --&gt; 低 需要强制类型转换<br>
+从 低 --&gt; 高 自动类型转换<br>
+强制类型转换：<br>
+类型 变量名 = (目标类型名) 需要强制转换的变量名<br>
+public class Demo05 {<br>
+public static void main(String[] args) {<br>
+// 高 --&gt; 低 ：强制类型转换<br>
+int i = 128;<br>
+byte b = (byte)i;   //这里输出结果不为128，因为byte最大值为127，此处内存溢出了，类型转换时需注意相应类型的最大容量，避免内存溢出。</p>
+<pre><code>    System.out.println(i);
+    System.out.println(b);
+
+}
+</code></pre>
+<p>}</p>
+<p>//输出结果：<br>
+128<br>
+-128</p>
+<p>自动类型转换：<br>
+public class Demo05 {<br>
+public static void main(String[] args) {<br>
+// 低 --&gt; 高 ：自动类型转换<br>
+int j = 128;<br>
+double c = j;</p>
+<pre><code>    System.out.println(j);
+    System.out.println(c);
+}
+</code></pre>
+<p>}</p>
+<p>//输出结果：<br>
+128<br>
+128.0</p>
+<p>Ps:<br>
+不能对布尔值进行类型转换<br>
+不能把对象类型转换为不相干的类型<br>
+高容量 --&gt; 低容量 强制类型转换<br>
+转换时可能存在内存溢出或精度问题<br>
+public class Demo03 {<br>
+public static void main(String[] args) {<br>
+char c1 = 'a';<br>
+char c2 = '中';</p>
+<pre><code>    System.out.println(c1);
+    System.out.println((int)c1);		//强制类型转换
+    System.out.println(c2);
+    System.out.println((int)c2);
+}
+</code></pre>
+<p>}</p>
+<p>可以看到进行强制类型转换后输出的为字符对应的ascii值<br>
+a<br>
+97<br>
+中<br>
+20013</p>
+<h1 id="变量">变量#</h1>
+<p>Java是强类型语言，每个变量都必须声明其类型<br>
+变量是Java最基本的存储单元，其要素包含变量名、数据类型、作用域<br>
+ps：<br>
+每个变量都有类型，类型可以是基本类型（整型、浮点型、字符型、布尔型）也可以是引用类型（类、接口、数组）<br>
+变量名必须是合法标识符，也就是必须以大小写字母或$或_开头<br>
+声明变量语句注意要以 分号 结束<br>
+type varName = [=value] [{,varName[=value]}];<br>
+数据类型 变量名 = 值;  //可以使用逗号分隔来同时声明多个变量</p>
+<p>变量的作用域<br>
+类变量<br>
+实例变量<br>
+局部变量<br>
+public class Demo06 {</p>
+<pre><code>//类变量，声明格式类似于实例变量，不过需要加static, 随类的出现和消失而出现和消失。
+static double salary = 2500;
+
+//实例变量，在类的里面方法的外面，从属于对象；如不自行初始化，Java会将其值初始化为这个类型的默认值。 0，0.0, 布尔：false, 其余数据类型：null
+String name;
+int age;
+
+//main方法
+public static void main(String[] args) {
+
+    //局部变量，在此方法里面，使用时必须声明和初始化值，不可在其他方法调用。
+    int i = 10;
+    System.out.println(i);
+
+    //变量类型（Demo06） 变量名（demo06） = 值（new Demo06()）
+    Demo06 demo06 = new Demo06();
+
+    System.out.println(demo06.age);
+    System.out.println(demo06.name);
+    System.out.println(salary);
+}
+
+//其他方法
+public void add(){
+
+}
+</code></pre>
+<p>}</p>
+<h1 id="常量">常量#</h1>
+<p>常量初始化后，常量值不可改变，可理解为特殊的变量<br>
+常量名一般使用大写字符<br>
+final 常量名 = 常量值;final i = 10;</p>
+<p>public class Demo07 {    //修饰符（static、final等）无先后顺序    static final int I = 10;    public static void main(String[] args) {        System.out.println(I);    }}</p>
+<p>变量命名规范<br>
+<img src="https://haresec.github.io/blog/post-images/1639362240152.png" alt="" loading="lazy"></p>
+<h1 id="修饰符">修饰符#</h1>
+<p>static 将方法变为类的方法，被修饰的方法可以在类里直接引用而不需要先创建对象。<br>
+public 公有的，如果想让子类也可以使用此属性或方法，需要用public修饰<br>
+protected 受保护的，同包不同级，不可以跨包使用<br>
+default 默认为default<br>
+private 私有的，私有的属性和方法是可以被继承的，但是仅限被类访问，子类一般无法直接调用及访问。一般属性也是私有的<br>
+final 通过final修饰得类没有子类</p>
+<h1 id="运算符">运算符#</h1>
+<p>% 模 取余运算instanceof==实例注意a++与++a的区别，a++先赋值再+1，++a先+1再赋值</p>
+<p>package operator;public class Demo2 {    public static void main(String[] args) {        long a = 123123123123123123L;        int b = 123;        short c = 10;        byte d = 8;        // 返回结果为操作数中最高位        System.out.println(a+b+c+d);        System.out.println(b+c+d);        System.out.println(c+d);    }}12312312312312326414118</p>
+<p>当操作数中有long，则返回值类型为long；操作数中无long时，返回结果为操作数中最高位<br>
+自增自减运算符、Math类#<br>
+Java.lang下的包不需要导入<br>
+package operator;public class Demo3 {    public static void main(String[] args) {        int a = 3;        //先赋值再+1        int b = a++;        //先+1再赋值        int c = ++a;        System.out.println(a);        System.out.println(b);        System.out.println(c);        //java.lang下的包不需要导入；         double pow = new Math.pow(2,3);        System.out.println(pow);    }}</p>
+<h1 id="java包机制">Java包机制#</h1>
+<p>包可以理解为一个文件夹<br>
+为了更好的组织类，Java提供了包机制，用于区别类名的命名空间。<br>
+语法：<br>
+package pkg1[.pkg2[.pkg3...]];</p>
+<p>一般利用公司域名倒置作为包名<br>
+例如：com.baidu.www<br>
+为了能够使用某一个包的成员，我们需要在Java程序中明确导入该包。<br>
+import package1[.package2...].(classname|*);</p>
+<p>import语句必须在package语句下面，不然会报错<br>
+IDEA默认开启了Compact Middle Packages,需要取消勾选才可一次性生成多级package<br>
+<img src="https://haresec.github.io/blog/post-images/1639362248066.png" alt="" loading="lazy"></p>
 
                         </div>
                         
                             <div class="post-toc">
                                 <ul class="markdownIt-TOC">
-<li>
-<ul>
-<li><a href="#%E6%9C%AC%E7%AB%99%E6%98%AF%E8%AE%B0%E5%BD%95%E6%88%90%E9%95%BF">🏠 本站是记录成长</a></li>
-<li><a href="#%E5%8F%91%E5%91%86">⛹ 发呆</a></li>
-<li><a href="#2438116539qqcom">2438116539@qq.com</a></li>
-</ul>
-</li>
+<li><a href="#%E6%B3%A8%E9%87%8A">注释#</a></li>
+<li><a href="#%E6%A0%87%E8%AF%86%E7%AC%A6%E4%B8%8E%E5%85%B3%E9%94%AE%E5%AD%97">标识符与关键字#</a></li>
+<li><a href="#%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B">数据类型#</a></li>
+<li><a href="#%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2">类型转换#</a></li>
+<li><a href="#%E5%8F%98%E9%87%8F">变量#</a></li>
+<li><a href="#%E5%B8%B8%E9%87%8F">常量#</a></li>
+<li><a href="#%E4%BF%AE%E9%A5%B0%E7%AC%A6">修饰符#</a></li>
+<li><a href="#%E8%BF%90%E7%AE%97%E7%AC%A6">运算符#</a></li>
+<li><a href="#java%E5%8C%85%E6%9C%BA%E5%88%B6">Java包机制#</a></li>
 </ul>
 
                             </div>
@@ -261,7 +452,7 @@
 
                                                 <p class="copyright-item">
                                                     <span>&#x6C38;&#x4E45;&#x94FE;&#x63A5;:</span>
-                                                    <span><a href="https://haresec.github.io/blog/post/about/">https://haresec.github.io/blog/post/about/</a></span>
+                                                    <span><a href="https://haresec.github.io/blog/post/javase/">https://haresec.github.io/blog/post/javase/</a></span>
                                                 </p>
 
                                                 <p class="copyright-item">
@@ -276,15 +467,9 @@
                                                                     <span style="margin-right:15px">
                         <i class="post-share"></i>
                         <span>&#x5206;&#x4EAB;:</span>
-                                                                    <a title="QR 码" target="_blank" href="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://haresec.github.io/blog/post/about/"><i class="fa fa-qrcode"></i></a>
-                                                                    <a title="QQ" target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://haresec.github.io/blog/post/about/&sharesource=qzone&title=关于&pics=https://haresec.github.io/blog/images/avatar.png?v=1639362571320&summary=&lt;blockquote&gt;
-&lt;p&gt;欢迎来到无聊时刻！🤝&lt;/p&gt;
-&lt;/blockquote&gt;
-"><i class="fa fa-qq"></i></a>
-                                                                    <a title="新浪微博" target="_blank" href="https://service.weibo.com/share/share.php?url=https://haresec.github.io/blog/post/about/&sharesource=weibo&title=关于 + " - " + &lt;blockquote&gt;
-&lt;p&gt;欢迎来到无聊时刻！🤝&lt;/p&gt;
-&lt;/blockquote&gt;
-&pic="https://haresec.github.io/blog/images/avatar.png?v=1639362571320 "><i class="fa fa-weibo "></i></a>
+                                                                    <a title="QR 码" target="_blank" href="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://haresec.github.io/blog/post/javase/"><i class="fa fa-qrcode"></i></a>
+                                                                    <a title="QQ" target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://haresec.github.io/blog/post/javase/&sharesource=qzone&title=JavaSE-基础语法&pics=https://haresec.github.io/blog/images/avatar.png?v=1639362571320&summary="><i class="fa fa-qq"></i></a>
+                                                                    <a title="新浪微博" target="_blank" href="https://service.weibo.com/share/share.php?url=https://haresec.github.io/blog/post/javase/&sharesource=weibo&title=JavaSE-基础语法 + " - " + &pic="https://haresec.github.io/blog/images/avatar.png?v=1639362571320 "><i class="fa fa-weibo "></i></a>
 
                                                                     </span>
                                                                     
@@ -302,6 +487,12 @@
                                                                                     <span>&#x6807;&#x7B7E;:</span>
                                                                                     <span class="tag ">
                         
+                        
+                        <a href="https://haresec.github.io/blog/tag/java/">#
+                    Java
+                        </a>
+                        
+                            
                                 </span>
                                                                                 </div>
                                                                                 <div>
