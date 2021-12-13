@@ -2,13 +2,87 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://haresec.github.io/blog</id>
     <title></title>
-    <updated>2021-12-13T12:49:22.924Z</updated>
+    <updated>2021-12-13T12:50:35.742Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://haresec.github.io/blog"/>
     <link rel="self" href="https://haresec.github.io/blog/atom.xml"/>
     <logo>https://haresec.github.io/blog/images/avatar.png</logo>
     <icon>https://haresec.github.io/blog/favicon.ico</icon>
     <rights>All rights reserved 2021, </rights>
+    <entry>
+        <title type="html"><![CDATA[Scanner使用]]></title>
+        <id>https://haresec.github.io/blog/post/scanner-shi-yong/</id>
+        <link href="https://haresec.github.io/blog/post/scanner-shi-yong/">
+        </link>
+        <updated>2021-12-13T12:31:00.000Z</updated>
+        <content type="html"><![CDATA[<h1 id="scanner对象">scanner对象</h1>
+<p>Java.util.Scanner是Java5新特征，我们可以通过Scanner类来获取用户的输入。</p>
+<h1 id="基本语法">基本语法：</h1>
+<p>Scanner scanner = new Scanner(System.in);<br>
+通过Scanner类的next()与nextLine()方法获取输入的字符串，在读取前我们一般需要使用hasNext()与hasNextLine()判断是否还有输入的数据。<br>
+next():<br>
+1、一定要读取到有效字符后才可以结束输入<br>
+2、对输入有效字符之前遇到的空白，next()方法会自动将其去掉<br>
+3、只有输入有效字符才将其后面输入的空白作为分隔符或者结束符<br>
+4、next()不能得到带有空格的字符串。</p>
+<p>nextLine()：<br>
+1、以Enter为结束符，也就是说nextLine()方法返回的是输入回车之前的所有字符<br>
+2、可以获得空白。</p>
+<p>package com.study.scanner;</p>
+<p>import java.util.Scanner;</p>
+<p>public class Demo01 {<br>
+public static void main(String[] args) {<br>
+//创建一个扫描器对象，用于接收键盘数据<br>
+Scanner scanner = new Scanner(System.in);<br>
+System.out.println(&quot;使用next方式接收：&quot;);<br>
+//判断用户有没有输入字符串<br>
+if(scanner.hasNext()){<br>
+//使用next方式接收<br>
+String str = scanner.next();<br>
+System.out.println(&quot;输入的内容：&quot;+str);<br>
+}<br>
+//凡是属于IO流的类如果不关闭会一直占用资源，要养成好习惯用完就关掉<br>
+scanner.close();<br>
+}<br>
+}</p>
+<h1 id="接收打印">接收打印</h1>
+<p>package com.study.scanner;</p>
+<p>import java.util.Scanner;</p>
+<p>public class Demo02 {<br>
+public static void main(String[] args) {<br>
+//从键盘接收数据<br>
+Scanner scanner = new Scanner(System.in);<br>
+System.out.println(&quot;请输入数据：&quot;);<br>
+String str = scanner.nextLine();<br>
+System.out.println(&quot;输出内容为：&quot;+str);<br>
+scanner.close();<br>
+}<br>
+}</p>
+<h1 id="scanner进阶使用">Scanner进阶使用</h1>
+<p>package com.study.scanner;</p>
+<p>import java.util.Scanner;</p>
+<p>public class Demo04 {<br>
+public static void main(String[] args) {<br>
+//我们可以输入多个数字，并求其总和平均数，每输入一个数字用回车确认，通过输入非数字来结束输入并输出执行结果：<br>
+Scanner scanner = new Scanner(System.in);<br>
+//和<br>
+double sum = 0;<br>
+//计算输入了多少个数字<br>
+int m = 0;<br>
+System.out.println(&quot;请输入数据：&quot;);<br>
+//通过循环判断是否还有输入，并在里面对每一个进行求和统计<br>
+while(scanner.hasNextDouble()){<br>
+double x = scanner.nextDouble();<br>
+m = m + 1;<br>
+sum = sum + x;<br>
+}<br>
+System.out.println(m + &quot;个数的和为&quot; + sum);<br>
+System.out.println(m + &quot;个数平均值是&quot; + (sum/m));<br>
+scanner.close();<br>
+}<br>
+}</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[JavaSE-基础语法]]></title>
         <id>https://haresec.github.io/blog/post/javase/</id>
