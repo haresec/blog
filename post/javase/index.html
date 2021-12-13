@@ -86,7 +86,7 @@
                         <input id="switch_default" type="checkbox" class="switch_default">
                         <label for="switch_default" class="toggleBtn"></label>
             </div>
-            <form id="gridea-search-form" data-update="1639362937523" action="/search/index.html">
+            <form id="gridea-search-form" data-update="1639363497566" action="/search/index.html">
                 <input class="search-input" autocomplete="off" spellcheck="false" name="q" autofocus="true" placeholder="Search...">
             </form>
         </div>
@@ -105,7 +105,7 @@
                         <!--zh-->
                         <a id="mobile-toggle-theme-zh" class="a zh">&nbsp;&#x6697;&#x9ED1;</a>
                     </div>
-                    <form id="gridea-search-form" data-update="1639362937523" action="/search/index.html">
+                    <form id="gridea-search-form" data-update="1639363497566" action="/search/index.html">
                         <input class="search-input" autocomplete="off" spellcheck="false" name="q" autofocus="true" placeholder="Search...">
                     </form>
                     <!--en-->
@@ -237,13 +237,13 @@
 <p>单行注释： //注释<br>
 多行注释： /<em>注释</em>/<br>
 文档注释： /** 文档注释 */<br>
-<img src="https://haresec.github.io/blog/post-images/1639362158241.png" alt="" loading="lazy"></p>
+<img src="https://haresec.github.io/blog/post-images/1639363449810.png" alt="" loading="lazy"></p>
 <h1 id="标识符与关键字">标识符与关键字#</h1>
 <p>下图为Java中所有的关键字<br>
 所有标字识符必须以大小写母或$或_开头，首字母之后可以用数字<br>
 不能使用关键字做变量名或方法名<br>
 标识符大小写敏感<br>
-<img src="https://haresec.github.io/blog/post-images/1639362215427.png" alt="" loading="lazy"></p>
+<img src="https://haresec.github.io/blog/post-images/1639363462238.png" alt="" loading="lazy"></p>
 <h1 id="数据类型">数据类型#</h1>
 <p>Java是一种强类型语言：要求变量使用要严格符合规定，所有变量必须先定以后才能使用。<br>
 Java数据类型分为2大类<br>
@@ -288,12 +288,12 @@ long num4 = 40L; //长整型需要在value后面加L</p>
     System.out.println(name2);
     System.out.println(flag);
 
+    }
 }
 </code></pre>
-<p>}</p>
 <h1 id="类型转换">类型转换#</h1>
 <p>Java是抢类型语言，在进行运算时，不同类型的数据需要先转换为同一类型在进行运算。<br>
-<img src="https://haresec.github.io/blog/post-images/1639362201900.png" alt="" loading="lazy"></p>
+<img src="https://haresec.github.io/blog/post-images/1639363474191.png" alt="" loading="lazy"></p>
 <p>容量从低到高优先级排序，因为浮点型优先级比整型高，所以float虽然容量小于long，但依然优先级高于long。<br>
 从 高 --&gt; 低 需要强制类型转换<br>
 从 低 --&gt; 高 自动类型转换<br>
@@ -350,6 +350,7 @@ a<br>
 20013</p>
 <h1 id="变量">变量#</h1>
 <p>Java是强类型语言，每个变量都必须声明其类型<br>
+<img src="https://haresec.github.io/blog/post-images/1639363491286.png" alt="" loading="lazy"><br>
 变量是Java最基本的存储单元，其要素包含变量名、数据类型、作用域<br>
 ps：<br>
 每个变量都有类型，类型可以是基本类型（整型、浮点型、字符型、布尔型）也可以是引用类型（类、接口、数组）<br>
@@ -393,24 +394,43 @@ public void add(){
 <h1 id="常量">常量#</h1>
 <p>常量初始化后，常量值不可改变，可理解为特殊的变量<br>
 常量名一般使用大写字符<br>
-final 常量名 = 常量值;final i = 10;</p>
-<p>public class Demo07 {    //修饰符（static、final等）无先后顺序    static final int I = 10;    public static void main(String[] args) {        System.out.println(I);    }}</p>
-<p>变量命名规范<br>
-<img src="https://haresec.github.io/blog/post-images/1639362240152.png" alt="" loading="lazy"></p>
-<h1 id="修饰符">修饰符#</h1>
-<p>static 将方法变为类的方法，被修饰的方法可以在类里直接引用而不需要先创建对象。<br>
+final 常量名 = 常量值;final i = 10;<br>
+public class Demo07 {    //修饰符（static、final等）无先后顺序    static final int I = 10;    public static void main(String[] args) {        System.out.println(I);    }}</p>
+<p>变量命名规范</p>
+<p>修饰符#<br>
+static 将方法变为类的方法，被修饰的方法可以在类里直接引用而不需要先创建对象。<br>
 public 公有的，如果想让子类也可以使用此属性或方法，需要用public修饰<br>
 protected 受保护的，同包不同级，不可以跨包使用<br>
 default 默认为default<br>
 private 私有的，私有的属性和方法是可以被继承的，但是仅限被类访问，子类一般无法直接调用及访问。一般属性也是私有的<br>
-final 通过final修饰得类没有子类</p>
-<h1 id="运算符">运算符#</h1>
-<p>% 模 取余运算instanceof==实例注意a++与++a的区别，a++先赋值再+1，++a先+1再赋值</p>
-<p>package operator;public class Demo2 {    public static void main(String[] args) {        long a = 123123123123123123L;        int b = 123;        short c = 10;        byte d = 8;        // 返回结果为操作数中最高位        System.out.println(a+b+c+d);        System.out.println(b+c+d);        System.out.println(c+d);    }}12312312312312326414118</p>
+final 通过final修饰得类没有子类<br>
+运算符#</p>
+<p>% 模 取余运算instanceof==实例注意a++与++a的区别，a++先赋值再+1，++a先+1再赋值<br>
+package operator;<br>
+public class Demo2 {public static void main(String[] args) {<br>
+long a = 123123123123123123L;<br>
+int b = 123;<br>
+short c = 10;<br>
+byte d = 8; // 返回结果为操作数中最高位<br>
+System.out.println(a+b+c+d);<br>
+System.out.println(b+c+d);<br>
+System.out.println(c+d);<br>
+}<br>
+}12312312312312326414118</p>
 <p>当操作数中有long，则返回值类型为long；操作数中无long时，返回结果为操作数中最高位<br>
 自增自减运算符、Math类#<br>
 Java.lang下的包不需要导入<br>
-package operator;public class Demo3 {    public static void main(String[] args) {        int a = 3;        //先赋值再+1        int b = a++;        //先+1再赋值        int c = ++a;        System.out.println(a);        System.out.println(b);        System.out.println(c);        //java.lang下的包不需要导入；         double pow = new Math.pow(2,3);        System.out.println(pow);    }}</p>
+package operator;<br>
+public class Demo3 {<br>
+public static void main(String[] args) {<br>
+int a = 3;    //先赋值再+1<br>
+int b = a++;  //先+1再赋值<br>
+int c = ++a;<br>
+System.out.println(a);<br>
+System.out.println(b);<br>
+System.out.println(c);  //java.lang下的包不需要导入；<br>
+double pow = new Math.pow(2,3);<br>
+System.out.println(pow);    }}</p>
 <h1 id="java包机制">Java包机制#</h1>
 <p>包可以理解为一个文件夹<br>
 为了更好的组织类，Java提供了包机制，用于区别类名的命名空间。<br>
@@ -422,7 +442,7 @@ package pkg1[.pkg2[.pkg3...]];</p>
 import package1[.package2...].(classname|*);</p>
 <p>import语句必须在package语句下面，不然会报错<br>
 IDEA默认开启了Compact Middle Packages,需要取消勾选才可一次性生成多级package<br>
-<img src="https://haresec.github.io/blog/post-images/1639362248066.png" alt="" loading="lazy"></p>
+<img src="https://haresec.github.io/blog/post-images/1639363440257.png" alt="" loading="lazy"></p>
 
                         </div>
                         
@@ -434,8 +454,6 @@ IDEA默认开启了Compact Middle Packages,需要取消勾选才可一次性生�
 <li><a href="#%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2">类型转换#</a></li>
 <li><a href="#%E5%8F%98%E9%87%8F">变量#</a></li>
 <li><a href="#%E5%B8%B8%E9%87%8F">常量#</a></li>
-<li><a href="#%E4%BF%AE%E9%A5%B0%E7%AC%A6">修饰符#</a></li>
-<li><a href="#%E8%BF%90%E7%AE%97%E7%AC%A6">运算符#</a></li>
 <li><a href="#java%E5%8C%85%E6%9C%BA%E5%88%B6">Java包机制#</a></li>
 </ul>
 
@@ -468,8 +486,8 @@ IDEA默认开启了Compact Middle Packages,需要取消勾选才可一次性生�
                         <i class="post-share"></i>
                         <span>&#x5206;&#x4EAB;:</span>
                                                                     <a title="QR 码" target="_blank" href="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://haresec.github.io/blog/post/javase/"><i class="fa fa-qrcode"></i></a>
-                                                                    <a title="QQ" target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://haresec.github.io/blog/post/javase/&sharesource=qzone&title=JavaSE-基础语法&pics=https://haresec.github.io/blog/images/avatar.png?v=1639362937523&summary="><i class="fa fa-qq"></i></a>
-                                                                    <a title="新浪微博" target="_blank" href="https://service.weibo.com/share/share.php?url=https://haresec.github.io/blog/post/javase/&sharesource=weibo&title=JavaSE-基础语法 + " - " + &pic="https://haresec.github.io/blog/images/avatar.png?v=1639362937523 "><i class="fa fa-weibo "></i></a>
+                                                                    <a title="QQ" target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://haresec.github.io/blog/post/javase/&sharesource=qzone&title=JavaSE-基础语法&pics=https://haresec.github.io/blog/images/avatar.png?v=1639363497566&summary="><i class="fa fa-qq"></i></a>
+                                                                    <a title="新浪微博" target="_blank" href="https://service.weibo.com/share/share.php?url=https://haresec.github.io/blog/post/javase/&sharesource=weibo&title=JavaSE-基础语法 + " - " + &pic="https://haresec.github.io/blog/images/avatar.png?v=1639363497566 "><i class="fa fa-weibo "></i></a>
 
                                                                     </span>
                                                                     
@@ -606,7 +624,7 @@ IDEA默认开启了Compact Middle Packages,需要取消勾选才可一次性生�
                     CheckVersion();
                     
                     var newDate = new Date();
-                    newDate.setTime(1639362937523);
+                    newDate.setTime(1639363497566);
                     console.log(" Blog Update Time: " + newDate.toLocaleDateString());
                     console.log("\n %c \u26a1Theme:Chic Author's Blog:https://blog.itjoker.cn  Write By ITJoker  \n\n", "color: #ffffff; background: rgba(49, 49, 49, 0.85); padding:5px 0;border-radius:5px;");
                 </script>
