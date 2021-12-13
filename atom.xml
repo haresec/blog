@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://haresec.github.io/blog</id>
     <title></title>
-    <updated>2021-12-13T02:45:33.719Z</updated>
+    <updated>2021-12-13T02:50:22.155Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://haresec.github.io/blog"/>
     <link rel="self" href="https://haresec.github.io/blog/atom.xml"/>
@@ -91,7 +91,6 @@ byte b = (byte)i;   //这里输出结果不为128，因为byte最大值为127，
 
 }
 </code></pre>
-<p>}</p>
 <p>//输出结果：<br>
 128<br>
 -128</p>
@@ -105,7 +104,6 @@ double c = j;</p>
     System.out.println(c);
 }
 </code></pre>
-<p>}</p>
 <p>//输出结果：<br>
 128<br>
 128.0</p>
@@ -124,7 +122,6 @@ char c2 = '中';</p>
     System.out.println((int)c2);
 }
 </code></pre>
-<p>}</p>
 <p>可以看到进行强制类型转换后输出的为字符对应的ascii值<br>
 a<br>
 97<br>
@@ -172,7 +169,6 @@ public void add(){
 
 }
 </code></pre>
-<p>}</p>
 <h1 id="常量">常量#</h1>
 <p>常量初始化后，常量值不可改变，可理解为特殊的变量<br>
 常量名一般使用大写字符<br>
