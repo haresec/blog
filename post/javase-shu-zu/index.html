@@ -2,10 +2,9 @@
 <html>
 
 <head>
-    
-        <meta charset="utf-8" />
+    <meta charset="utf-8" />
 <title>
-    友链 | 
+    
 </title>
 <!--[if lt IE 9]><script src="//cdn.bootcss.com/html5shiv/r29/html5.js"></script><![endif]-->
 <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
@@ -53,7 +52,6 @@
                                 })();
                             </script>
                             
-            
 </head>
 
 <body>
@@ -205,34 +203,161 @@
                 <div class="container">
                     <article class="post-wrap">
                         <header class="post-header">
-                            <h1 class="post-title zh">
-                                &#x53CB;&#x94FE;
+                            <h1 class="post-title">
+                                Javase-数组
                             </h1>
-                            <h1 class="post-title en">
-                                Friends
-                            </h1>
-                        </header>
-                        <div class="post-content">
                             
-                                
-                                    <div class="friend-box">
-                                        <img class="friend-avatar" src="https://blog.itjoker.cn/images/avatar.png">
-                                        <div class="flink-info">
-                                            <a href="https://blog.itjoker.cn" target="_blank">
-                                                ITJoker
-                                            </a>
-                                            <br />
-                                            ITJoker&#39;s Blog
-                                        </div>
+                                    <!--zh-->
+                                    <div class="post-meta zh">
+                                        &#x4F5C;&#x8005;:
+                                        <a itemprop="author" rel="author" href="/">
+                                            
+                                        </a>
+                                        <span class="post-time">&#x65E5;&#x671F;: <a href="#">2021-12-14</a></span>
+                                        <span class="post-readtime">&#x9605;&#x8BFB;&#x65F6;&#x95F4;:<a
+                                    href="#">2.8
+                                    &#x5206;&#x949F;</a></span>
+                                        <span class="post-words">&#x5B57;&#x6570;:<a href="#">780</a></span>
+                                        
+                                                阅读量:
+                                                <span data-hk-page="current"> - </span>
+                                                
                                     </div>
                                     
-                                        
+                        </header>
+                        
+                        <div class="post-content">
+                            <h1 id="数组">数组</h1>
+<p>数组概念：数组就是存储数据成都固定的容器，保证多个数据类型要一致。<br>
+容器概念：将多个数据存储到一起，每个数据称为该容器的元素。</p>
+<h1 id="数组定义">数组定义</h1>
+<p>方式一格式：<br>
+数据存储类型[] 数组名字 = new 数组存储的类型[长度];<br>
+数组定义格式详解：<br>
+数组存储的数据类型： 创建的数组容器可以存储什么数据类型。</p>
+<p>[] : 表示数组。</p>
+<p>数组名字：为定义的数组起个变量名，满足标识符规范，可以使用名字操作数组。</p>
+<p>new：关键字，创建数组使用的关键字。</p>
+<p>数组存储的数据类型： 创建的数组容器可以存储什么数据类型。</p>
+<p>[长度]：数组的长度，表示数组容器中可以存储多少个元素</p>
+<p>数组有特定长度，长度一旦指定，不可改变。<br>
+int[] arr = new int[3];<br>
+方式二格式：<br>
+数据类型[] 数组名 = new 数据类型[]{元素1，元素2，元素3}；<br>
+方式三格式：<br>
+数据类型[] 数据名 = {元素1，元素2，元素3}；</p>
+<h1 id="访问数组">访问数组</h1>
+<p>访问数组数据会利用到索引来访问到数组里面的数据，那就来讲讲这个索引吧。<br>
+索引： 每一个存储到数组的元素，都会自动的拥有一个编号，从0开始，这个自动编号称为数组索引<br>
+(index)，可以通过数组的索引访问到数组中的元素。<br>
+如果想访问到数据的数据可以在数组变量后面加入中括号，然后里面写入需要索引的值。<br>
+数组名[索引]<br>
+每个数组都具有长度，而且是固定的。java赋予数值一个属性，可以直接获取数组的长度。<br>
+数组名.length<br>
+如果想索引到数组的最大值可以直接使用数组名.length-1 获取到，这里之所以减去一是因为从零开始索引的缘故。<br>
+在前面也说到过，因为数组的长度一旦定义就无法改变，那么就会出现一些问题，比如索引超出访问，如果索引超出范围的话会爆出空指针异常错误。</p>
+<h1 id="数组遍历">数组遍历</h1>
+<p>遍历数组可以使用for循环进行遍历，获取数组的最大值作为循环条件，然后索引数组的步进数。<br>
+public static void main(String[] args) {<br>
+int arr[] = {1,20,13,64,45};<br>
+for (int i = 0; i &lt; arr.length ; i++) {<br>
+System.out.println(arr[i]);<br>
+}<br>
+}</p>
+<p>这样就可以把所有数组的值一一遍历出来了。</p>
+<h1 id="数组传递">数组传递</h1>
+<p>数组也可以当作参数进行传递<br>
+public static void main(String[] args) {<br>
+int[] arr = { 1, 3, 5, 7, 9 };<br>
+//调用方法，传递数组<br>
+printArray(arr);<br>
+} /<br>
+*<br>
+创建方法，方法接收数组类型的参数<br>
+进行数组的遍历<br>
+*/<br>
+public static void printArray(int[] arr) {<br>
+for (int i = 0; i &lt; arr.length; i++) {<br>
+System.out.println(arr[i]);<br>
+}<br>
+}</p>
+<p>方法的参数为基本类型时,传递的是数据值. 方法的参数为引用类型时,传递的是地址值。</p>
+
                         </div>
+                        
+                                
+                                    
+                                            <!--zh-->
+                                            <section class="post-copyright zh">
+                                                <p class="copyright-item ">
+                                                    <span>&#x4F5C;&#x8005;:</span>
+                                                    <span></span>
+                                                </p>
+
+                                                <p class="copyright-item">
+                                                    <span>&#x6C38;&#x4E45;&#x94FE;&#x63A5;:</span>
+                                                    <span><a href="https://haresec.github.io/blog/post/javase-shu-zu/">https://haresec.github.io/blog/post/javase-shu-zu/</a></span>
+                                                </p>
+
+                                                <p class="copyright-item">
+                                                    <span>&#x534F;&#x8BAE;:</span>
+                                                    <span>MIT License</span>
+                                                </p>
+                                            </section>
+                                            
+                                                
+                                                    
+                                                                    <!--Share-->
+                                                                    <span style="margin-right:15px">
+                        <i class="post-share"></i>
+                        <span>&#x5206;&#x4EAB;:</span>
+                                                                    <a title="QR 码" target="_blank" href="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://haresec.github.io/blog/post/javase-shu-zu/"><i class="fa fa-qrcode"></i></a>
+                                                                    <a title="QQ" target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://haresec.github.io/blog/post/javase-shu-zu/&sharesource=qzone&title=Javase-数组&pics=https://haresec.github.io/blog/images/avatar.png?v=1639484993306&summary="><i class="fa fa-qq"></i></a>
+                                                                    <a title="新浪微博" target="_blank" href="https://service.weibo.com/share/share.php?url=https://haresec.github.io/blog/post/javase-shu-zu/&sharesource=weibo&title=Javase-数组 + " - " + &pic="https://haresec.github.io/blog/images/avatar.png?v=1639484993306 "><i class="fa fa-weibo "></i></a>
+
+                                                                    </span>
+                                                                    
+                                                                        <div class="reward ">
+                                                                            <div class="reward-button ">&yen;
+                                                                                <span class="reward-code "> 
+                        <span class="alipay-code "> <img class="alipay-img " alt = "support " src="1"><b>支付宝</b> </span>
+                                                                                <span class="wechat-code "> <img alt ="support " class="wechat-img " src="1"><b>微信</b> </span> </span>
+                                                                            </div>
+                                                                        </div>
+                                                                        
+                                                                            <!--zh-->
+                                                                            <section class="post-tags zh ">
+                                                                                <div>
+                                                                                    <span>&#x6807;&#x7B7E;:</span>
+                                                                                    <span class="tag ">
+                        
+                                </span>
+                                                                                </div>
+                                                                                <div>
+                                                                                    <a href="javascript:window.history.back();">
+                        &#x8FD4;&#x56DE;</a>
+                                                                                    <span>&dot;</span>
+                                                                                    <a href="#">&#x4E3B;&#x9875;</a>
+                                                                                </div>
+                                                                            </section>
+
+                                                                            
+                                                                                <!---->
+                                                                                <section class="post-nav">
+                                                                                    
+                                                                                            
+                                                                                                <a class="next" rel="next" href="https://haresec.github.io/blog/post/javase-fang-fa/">
+                                                                                                    Javase-方法
+                                                                                                </a>
+                                                                                                
+                                                                                </section>
                     </article>
                 </div>
+                
+                                            
             </div>
-            
-                                        
+    </div>
+    </div>
     </div>
     
     <div id="player"></div>
@@ -327,6 +452,10 @@
                     console.log(" Blog Update Time: " + newDate.toLocaleDateString());
                     console.log("\n %c \u26a1Theme:Chic Author's Blog:https://blog.itjoker.cn  Write By ITJoker  \n\n", "color: #ffffff; background: rgba(49, 49, 49, 0.85); padding:5px 0;border-radius:5px;");
                 </script>
+        </div>
 </body>
+<script>
+    scroll();
+</script>
 
 </html>
