@@ -1,18 +1,150 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>https://haresec.github.io/blog</id>
+    <id>http://localhost:4000</id>
     <title></title>
-    <updated>2021-12-13T12:50:35.742Z</updated>
+    <updated>2021-12-14T10:51:18.920Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
-    <link rel="alternate" href="https://haresec.github.io/blog"/>
-    <link rel="self" href="https://haresec.github.io/blog/atom.xml"/>
-    <logo>https://haresec.github.io/blog/images/avatar.png</logo>
-    <icon>https://haresec.github.io/blog/favicon.ico</icon>
+    <link rel="alternate" href="http://localhost:4000"/>
+    <link rel="self" href="http://localhost:4000/atom.xml"/>
+    <logo>http://localhost:4000/images/avatar.png</logo>
+    <icon>http://localhost:4000/favicon.ico</icon>
     <rights>All rights reserved 2021, </rights>
     <entry>
-        <title type="html"><![CDATA[Scanner使用]]></title>
-        <id>https://haresec.github.io/blog/post/scanner-shi-yong/</id>
-        <link href="https://haresec.github.io/blog/post/scanner-shi-yong/">
+        <title type="html"><![CDATA[Javase-流程控制]]></title>
+        <id>http://localhost:4000/post/javase-liu-cheng-kong-zhi/</id>
+        <link href="http://localhost:4000/post/javase-liu-cheng-kong-zhi/">
+        </link>
+        <updated>2021-12-14T10:48:27.000Z</updated>
+        <content type="html"><![CDATA[<h1 id="流程控制语句">流程控制语句#</h1>
+<p>一个程序里面必不可少的就是流程控制，流程控制无非就是判断和循环。首先先来看看判断语句。</p>
+<h1 id="if判断">if判断#</h1>
+<p>语法：</p>
+<p>if (关系表达式){<br>
+语句体;<br>
+}else{<br>
+语句体;<br>
+}</p>
+<p>执行流程<br>
+首先会判断该表达式结果为true还是flase，如果是true就执行语句体，如果是false则执行else里面的内容。<br>
+public static void main(String[] args) {<br>
+int a = 1;<br>
+if (a==1){<br>
+System.out.println(&quot;a:&quot;+a);<br>
+}else{<br>
+System.out.println(&quot;a!=1&quot;);<br>
+}<br>
+}</p>
+<h1 id="switch选择语句">switch——选择语句#</h1>
+<p>switch 语句格式：</p>
+<p>switch(表达式) {<br>
+case 常量值1:<br>
+语句体1;<br>
+break;<br>
+case 常量值2:<br>
+语句体2;<br>
+break;<br>
+...<br>
+default:<br>
+语句体n+1;<br>
+break;<br>
+}</p>
+<p>执行流程：<br>
+首先计算出表达式的值，然后和case依次比较，如果有对应的值，则执行相应的语句，执行完成时遇到break结束。最后如果所有的case值都不匹配就会执行default里面的语句。</p>
+<p>public static void main(String[] args) {</p>
+<p>int weekday = 6;</p>
+<p>switch(weekday) {<br>
+case 1:<br>
+System.out.println(&quot;星期一&quot;);<br>
+break;<br>
+case 2:<br>
+System.out.println(&quot;星期二&quot;);<br>
+break;<br>
+case 3:<br>
+System.out.println(&quot;星期三&quot;);<br>
+break;<br>
+case 4:<br>
+System.out.println(&quot;星期四&quot;);<br>
+break;<br>
+case 5:<br>
+System.out.println(&quot;星期五&quot;);<br>
+break;<br>
+case 6:<br>
+System.out.println(&quot;星期六&quot;);<br>
+break;<br>
+case 7:<br>
+System.out.println(&quot;星期日&quot;);<br>
+break;<br>
+default:<br>
+System.out.println(&quot;你输入的数字有误&quot;);<br>
+break;<br>
+}<br>
+}</p>
+<h1 id="循环语句-for">循环语句-for#</h1>
+<p>循环语句可以满足在循环条件的情况下，反复执行一段代码。当在达成某个条件的时候必须把循环条件改为flase，让他结束循环，否则就会出现死循环，一直执行下去。</p>
+<p>for循环语句格式：</p>
+<p>for(初始化表达式;布尔表达式;步进表达式){<br>
+循环体；<br>
+}</p>
+<p>执行流程：<br>
+首先初始化一个变量，定义一个表达式和步进表达式，然后循环体执行，如果不满足则继续循环，直到满足布尔表达式的条件则退出循环。</p>
+<p>public static void main(String[] args) {<br>
+for (int i = 0; i &lt; 20; i++) {<br>
+System.out.println(&quot;Hello World&quot;);<br>
+}<br>
+}<br>
+这里打印了20次，也就是说这循环了20次，循环条件为i小于20，每次执行i就会加1，加到20次就满足了布尔表达式的条件，退出循环。<br>
+在这里步进表达式必须要写，否则会陷入死循环。</p>
+<h1 id="循环语句2while">循环语句2——while#</h1>
+<p>while循环语句格式：</p>
+<p>初始化表达式<br>
+while(布尔表达式){<br>
+循环体<br>
+步进表达式<br>
+}<br>
+public static void main(String[] args) {<br>
+//while循环实现打印10次HelloWorld<br>
+//定义初始化变量<br>
+int i = 1;<br>
+//循环条件&lt;=10<br>
+while(i&lt;=10){<br>
+System.out.println(&quot;HelloWorld&quot;);<br>
+//步进<br>
+i++;<br>
+}<br>
+}</p>
+<h1 id="循环语句3-do-while">循环语句3 do-while#</h1>
+<p>do-while和while很类似，可以说基本用法都是一样的，但唯一不同的是while如果表达式满足的话就直接不会执行了，而do-while是先执行一遍里面的循环体再判断表达式满不满足条件。</p>
+<p>do...while格式：</p>
+<p>初始化表达式<br>
+do{<br>
+循环体<br>
+步进表达式<br>
+}while(布尔表达式);<br>
+public static void main(String[] args) {<br>
+int x=1;<br>
+do {<br>
+System.out.println(&quot;HelloWorld&quot;);<br>
+x++;<br>
+}while(x&lt;=10);<br>
+}<br>
+do...while循环的特点：无条件执行一次循环体，即使我们将循环条件直接写成false，也依然会循环一次。</p>
+<p>这里再来说说for循环和while的区别。</p>
+<p>控制条件语句所控制的那个变量，在for循环结束后，就不能再被访问到了，而while循环结束还可以继<br>
+续使用，如果想继续使用，就用while，否则推荐使用for。原因是for循环结束，该变量就从内存中消<br>
+失，能够提高内存的使用效率。</p>
+<p>在已知循环次数的时候使用推荐使用for，循环次数未知的时推荐使用while。</p>
+<h1 id="跳出循环语句">跳出循环语句#</h1>
+<p>break</p>
+<p>使用场景：<br>
+终结循环或者是选择结构switch</p>
+<p>continue</p>
+<p>使用场景：结束本次循环，继续下一次的循环</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Javase-Scanner使用]]></title>
+        <id>http://localhost:4000/post/scanner-shi-yong/</id>
+        <link href="http://localhost:4000/post/scanner-shi-yong/">
         </link>
         <updated>2021-12-13T12:31:00.000Z</updated>
         <content type="html"><![CDATA[<h1 id="scanner对象">scanner对象</h1>
@@ -85,21 +217,21 @@ scanner.close();<br>
     </entry>
     <entry>
         <title type="html"><![CDATA[JavaSE-基础语法]]></title>
-        <id>https://haresec.github.io/blog/post/javase/</id>
-        <link href="https://haresec.github.io/blog/post/javase/">
+        <id>http://localhost:4000/post/javase/</id>
+        <link href="http://localhost:4000/post/javase/">
         </link>
         <updated>2021-11-17T13:41:26.000Z</updated>
         <content type="html"><![CDATA[<h1 id="注释">注释#</h1>
 <p>单行注释： //注释<br>
 多行注释： /<em>注释</em>/<br>
 文档注释： /** 文档注释 */<br>
-<img src="https://haresec.github.io/blog/post-images/1639363449810.png" alt="" loading="lazy"></p>
+<img src="http://localhost:4000/post-images/1639363449810.png" alt="" loading="lazy"></p>
 <h1 id="标识符与关键字">标识符与关键字#</h1>
 <p>下图为Java中所有的关键字<br>
 所有标字识符必须以大小写母或$或_开头，首字母之后可以用数字<br>
 不能使用关键字做变量名或方法名<br>
 标识符大小写敏感<br>
-<img src="https://haresec.github.io/blog/post-images/1639363462238.png" alt="" loading="lazy"></p>
+<img src="http://localhost:4000/post-images/1639363462238.png" alt="" loading="lazy"></p>
 <h1 id="数据类型">数据类型#</h1>
 <p>Java是一种强类型语言：要求变量使用要严格符合规定，所有变量必须先定以后才能使用。<br>
 Java数据类型分为2大类<br>
@@ -149,7 +281,7 @@ long num4 = 40L; //长整型需要在value后面加L</p>
 </code></pre>
 <h1 id="类型转换">类型转换#</h1>
 <p>Java是抢类型语言，在进行运算时，不同类型的数据需要先转换为同一类型在进行运算。<br>
-<img src="https://haresec.github.io/blog/post-images/1639363474191.png" alt="" loading="lazy"></p>
+<img src="http://localhost:4000/post-images/1639363474191.png" alt="" loading="lazy"></p>
 <p>容量从低到高优先级排序，因为浮点型优先级比整型高，所以float虽然容量小于long，但依然优先级高于long。<br>
 从 高 --&gt; 低 需要强制类型转换<br>
 从 低 --&gt; 高 自动类型转换<br>
@@ -203,7 +335,7 @@ a<br>
 20013</p>
 <h1 id="变量">变量#</h1>
 <p>Java是强类型语言，每个变量都必须声明其类型<br>
-<img src="https://haresec.github.io/blog/post-images/1639363491286.png" alt="" loading="lazy"><br>
+<img src="http://localhost:4000/post-images/1639363491286.png" alt="" loading="lazy"><br>
 变量是Java最基本的存储单元，其要素包含变量名、数据类型、作用域<br>
 ps：<br>
 每个变量都有类型，类型可以是基本类型（整型、浮点型、字符型、布尔型）也可以是引用类型（类、接口、数组）<br>
@@ -339,7 +471,7 @@ package pkg1[.pkg2[.pkg3...]];</p>
 import package1[.package2...].(classname|*);</p>
 <p>import语句必须在package语句下面，不然会报错<br>
 IDEA默认开启了Compact Middle Packages,需要取消勾选才可一次性生成多级package<br>
-<img src="https://haresec.github.io/blog/post-images/1639363440257.png" alt="" loading="lazy"></p>
+<img src="http://localhost:4000/post-images/1639363440257.png" alt="" loading="lazy"></p>
 ]]></content>
     </entry>
 </feed>
