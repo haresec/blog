@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>http://localhost:4000</id>
+    <id>https://haresec.github.io/blog</id>
     <title></title>
-    <updated>2021-12-14T10:51:18.920Z</updated>
+    <updated>2021-12-14T10:51:37.746Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
-    <link rel="alternate" href="http://localhost:4000"/>
-    <link rel="self" href="http://localhost:4000/atom.xml"/>
-    <logo>http://localhost:4000/images/avatar.png</logo>
-    <icon>http://localhost:4000/favicon.ico</icon>
+    <link rel="alternate" href="https://haresec.github.io/blog"/>
+    <link rel="self" href="https://haresec.github.io/blog/atom.xml"/>
+    <logo>https://haresec.github.io/blog/images/avatar.png</logo>
+    <icon>https://haresec.github.io/blog/favicon.ico</icon>
     <rights>All rights reserved 2021, </rights>
     <entry>
         <title type="html"><![CDATA[Javase-流程控制]]></title>
-        <id>http://localhost:4000/post/javase-liu-cheng-kong-zhi/</id>
-        <link href="http://localhost:4000/post/javase-liu-cheng-kong-zhi/">
+        <id>https://haresec.github.io/blog/post/javase-liu-cheng-kong-zhi/</id>
+        <link href="https://haresec.github.io/blog/post/javase-liu-cheng-kong-zhi/">
         </link>
         <updated>2021-12-14T10:48:27.000Z</updated>
         <content type="html"><![CDATA[<h1 id="流程控制语句">流程控制语句#</h1>
@@ -143,8 +143,8 @@ do...while循环的特点：无条件执行一次循环体，即使我们将循�
     </entry>
     <entry>
         <title type="html"><![CDATA[Javase-Scanner使用]]></title>
-        <id>http://localhost:4000/post/scanner-shi-yong/</id>
-        <link href="http://localhost:4000/post/scanner-shi-yong/">
+        <id>https://haresec.github.io/blog/post/scanner-shi-yong/</id>
+        <link href="https://haresec.github.io/blog/post/scanner-shi-yong/">
         </link>
         <updated>2021-12-13T12:31:00.000Z</updated>
         <content type="html"><![CDATA[<h1 id="scanner对象">scanner对象</h1>
@@ -217,21 +217,21 @@ scanner.close();<br>
     </entry>
     <entry>
         <title type="html"><![CDATA[JavaSE-基础语法]]></title>
-        <id>http://localhost:4000/post/javase/</id>
-        <link href="http://localhost:4000/post/javase/">
+        <id>https://haresec.github.io/blog/post/javase/</id>
+        <link href="https://haresec.github.io/blog/post/javase/">
         </link>
         <updated>2021-11-17T13:41:26.000Z</updated>
         <content type="html"><![CDATA[<h1 id="注释">注释#</h1>
 <p>单行注释： //注释<br>
 多行注释： /<em>注释</em>/<br>
 文档注释： /** 文档注释 */<br>
-<img src="http://localhost:4000/post-images/1639363449810.png" alt="" loading="lazy"></p>
+<img src="https://haresec.github.io/blog/post-images/1639363449810.png" alt="" loading="lazy"></p>
 <h1 id="标识符与关键字">标识符与关键字#</h1>
 <p>下图为Java中所有的关键字<br>
 所有标字识符必须以大小写母或$或_开头，首字母之后可以用数字<br>
 不能使用关键字做变量名或方法名<br>
 标识符大小写敏感<br>
-<img src="http://localhost:4000/post-images/1639363462238.png" alt="" loading="lazy"></p>
+<img src="https://haresec.github.io/blog/post-images/1639363462238.png" alt="" loading="lazy"></p>
 <h1 id="数据类型">数据类型#</h1>
 <p>Java是一种强类型语言：要求变量使用要严格符合规定，所有变量必须先定以后才能使用。<br>
 Java数据类型分为2大类<br>
@@ -281,7 +281,7 @@ long num4 = 40L; //长整型需要在value后面加L</p>
 </code></pre>
 <h1 id="类型转换">类型转换#</h1>
 <p>Java是抢类型语言，在进行运算时，不同类型的数据需要先转换为同一类型在进行运算。<br>
-<img src="http://localhost:4000/post-images/1639363474191.png" alt="" loading="lazy"></p>
+<img src="https://haresec.github.io/blog/post-images/1639363474191.png" alt="" loading="lazy"></p>
 <p>容量从低到高优先级排序，因为浮点型优先级比整型高，所以float虽然容量小于long，但依然优先级高于long。<br>
 从 高 --&gt; 低 需要强制类型转换<br>
 从 低 --&gt; 高 自动类型转换<br>
@@ -335,7 +335,7 @@ a<br>
 20013</p>
 <h1 id="变量">变量#</h1>
 <p>Java是强类型语言，每个变量都必须声明其类型<br>
-<img src="http://localhost:4000/post-images/1639363491286.png" alt="" loading="lazy"><br>
+<img src="https://haresec.github.io/blog/post-images/1639363491286.png" alt="" loading="lazy"><br>
 变量是Java最基本的存储单元，其要素包含变量名、数据类型、作用域<br>
 ps：<br>
 每个变量都有类型，类型可以是基本类型（整型、浮点型、字符型、布尔型）也可以是引用类型（类、接口、数组）<br>
@@ -471,7 +471,7 @@ package pkg1[.pkg2[.pkg3...]];</p>
 import package1[.package2...].(classname|*);</p>
 <p>import语句必须在package语句下面，不然会报错<br>
 IDEA默认开启了Compact Middle Packages,需要取消勾选才可一次性生成多级package<br>
-<img src="http://localhost:4000/post-images/1639363440257.png" alt="" loading="lazy"></p>
+<img src="https://haresec.github.io/blog/post-images/1639363440257.png" alt="" loading="lazy"></p>
 ]]></content>
     </entry>
 </feed>
